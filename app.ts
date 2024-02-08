@@ -1,5 +1,6 @@
 import { CompanyAccount } from './class/CompanyAccount'
 import { PeopleAccount } from './class/PeopleAccount'
+import { PremiumAccount } from './class/PremiumAccount'
 
 const peopleAccount: PeopleAccount = new PeopleAccount(1, 'Vanessa', 10)
 console.log(peopleAccount)
@@ -13,3 +14,8 @@ companyAccount.deposit(1000)
 companyAccount.withdraw(150)
 companyAccount.withdraw(1500)
 companyAccount.getLoan(2000)
+
+
+const premiumAccount: PremiumAccount = new PremiumAccount('Nath', 100)
+console.log(premiumAccount)
+premiumAccount.premiumDeposit(540)

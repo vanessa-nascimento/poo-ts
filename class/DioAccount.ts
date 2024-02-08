@@ -23,10 +23,11 @@ export abstract class DioAccount {
   }
 
   getBalance = (): void => {
-    console.log('Seu saldo é de:', this.balance, 'reais.')
+    console.log('Seu saldo é de:', this.balance, 'reais.\n')
   }
 
   deposit = (depositValue: number): void => {
+    console.log('Valor a ser depositado:', depositValue)
     if(this.validateStatus()){
       if(depositValue > 0) {
         this.setBalance(this.balance + depositValue)
@@ -37,6 +38,7 @@ export abstract class DioAccount {
   }
 
   withdraw = (withdrawValue: number): void => {
+    console.log('Valor a ser sacado:', withdrawValue)
     if(this.validateStatus()){
       if(withdrawValue <= this.balance) {
         this.setBalance(this.balance - withdrawValue)

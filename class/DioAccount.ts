@@ -29,8 +29,8 @@ export abstract class DioAccount {
   deposit = (depositValue: number): void => {
     if(this.validateStatus()){
       if(depositValue > 0) {
-        this.setBalance(depositValue)
-        console.log('\nDepósito feito com sucesso.')
+        this.setBalance(this.balance + depositValue)
+        console.log('\nDepósito em conta realizado com sucesso.')
       } else console.log('\nNão é possível depositar valores menores ou iguais a zero.')
       this.getBalance()
     }
@@ -40,13 +40,13 @@ export abstract class DioAccount {
     if(this.validateStatus()){
       if(withdrawValue <= this.balance) {
         this.setBalance(this.balance - withdrawValue)
-        console.log('\nSaque feito com sucesso.')
+        console.log('\nSaque em conta realizado com sucesso.')
         this.getBalance()
       } else console.log('\nSaque não realizado por saldo insuficiente.')
     }
   }
 
-  private validateStatus = (): boolean => {
+  validateStatus = (): boolean => {
     if (this.status) {
       return this.status
     }

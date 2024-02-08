@@ -7,8 +7,10 @@ export class PremiumAccount extends DioAccount {
     }
 
     premiumDeposit = (depositValue: number): void => {
-        console.log('\nDepósito Conta Premium')
-        console.log('Valor para depósito:', depositValue)
-        this.deposit(depositValue + 10)
+        if(depositValue > 0) {
+            console.log('\nDepósito Conta Premium')
+            console.log('Valor para depósito:', depositValue)
+            this.deposit(depositValue + 10)
+        } else console.log('Não é possível depositar valores menores ou iguais a zero.')
     }
 }
